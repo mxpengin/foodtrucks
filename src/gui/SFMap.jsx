@@ -44,7 +44,6 @@ export default function SFMap({ftdata}){
     </div>
     <div style={{ width: '99%', height: '85vh' }} ref={mapRef}>
 
-    {/*<APIProvider apiKey="AIzaSyCiYftJxB-6IAs1JryhxvSVRwvq2rsgY8g">*/}
 
        <Map
       defaultZoom={12}

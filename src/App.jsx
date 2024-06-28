@@ -45,7 +45,7 @@ function App() {
         <span>Error</span>
       </div>}
       {screen==="map"&&<div>
-        <APIProvider apiKey="AIzaSyCiYftJxB-6IAs1JryhxvSVRwvq2rsgY8g">
+        <APIProvider apiKey="">
           <SFMap ftdata={foodTruckData} />
         </APIProvider>
       </div>}
