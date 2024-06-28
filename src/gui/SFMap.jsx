@@ -43,7 +43,7 @@ export default function SFMap({ftdata}){
 
      >
         {/*<AdvancedMarker position={{ lat: 37.75, lng: -122.40 }} title={'Mexicana'}><Pin background={'#ffff00'} /></AdvancedMarker>*/}
-        {draw&& draw.map((ft)=><AdvancedMarker key={ft.objectid} position={{ lat: Number(ft.location.latitude) , lng: Number(ft.location.longitude) }} title={ft.applicant}><Pin background={'#ffff00'} /></AdvancedMarker>) }
+        {draw&& draw.map((ft)=><AdvancedMarker key={ft.objectid} position={{ lat: Number(ft.location.latitude) , lng: Number(ft.location.longitude) }} title={ft.applicant}><Pin background={ft.color} /></AdvancedMarker>) }
 
      </Map>
       {/*</APIProvider>*/}
