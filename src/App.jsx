@@ -5,6 +5,7 @@ import animation from './assets/foodtruck-small.gif';
 import './App.css';
 import {FoodTruckInfo} from './controllers/FoodTruckInfo';
 import SFMap from './gui/SFMap';
+import {APIProvider, Map, useMap} from '@vis.gl/react-google-maps';
 
 
 function App() {
@@ -43,7 +44,9 @@ function App() {
         <span>Error</span>
       </div>}
       {screen==="map"&&<div>
+      <APIProvider apiKey="AIzaSyCiYftJxB-6IAs1JryhxvSVRwvq2rsgY8g">
         <SFMap  />
+        </APIProvider>
       </div>}
       <div>
 

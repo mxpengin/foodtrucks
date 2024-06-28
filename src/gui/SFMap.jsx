@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 //import { Loader } from "@googlemaps/js-api-loader";
-import {APIProvider, Map} from '@vis.gl/react-google-maps';
+import {APIProvider, Map, useMap} from '@vis.gl/react-google-maps';
 
 
 
@@ -8,11 +8,20 @@ import {APIProvider, Map} from '@vis.gl/react-google-maps';
 
 export default function SFMap(){
   const mapRef = useRef(null);
-
-  useEffect(() => {
+  const map = useMap();
 
       
+    useEffect(() => {
+      console.log("En useEffect map:"+map);
+      if (map) {
+        console.log("En useEffect-map");
+      
 
+
+   
+
+      }
+    }, [map]);
 
       /*if (mapRef.current) {
         const map = new window.google.maps.Map(mapRef.current, {
@@ -49,7 +58,7 @@ export default function SFMap(){
     }*/
     
 
-  }, []);
+
 
 
 
@@ -58,15 +67,16 @@ export default function SFMap(){
   return(
     <div style={{ width: '100vw', height: '100vh' }} ref={mapRef}>
 
-    <APIProvider apiKey="AIzaSyCiYftJxB-6IAs1JryhxvSVRwvq2rsgY8g">
+    {/*<APIProvider apiKey="AIzaSyCiYftJxB-6IAs1JryhxvSVRwvq2rsgY8g">*/}
 
        <Map
       defaultZoom={12}
       defaultCenter={ { lat: 37.75, lng: -122.40 } } 
       style={{ width: '100%', height: '100%' }}
+      onLoad={map => setMap(map)}
 
      ></Map>
-      </APIProvider>
+      {/*</APIProvider>*/}
       </div>
 
       
