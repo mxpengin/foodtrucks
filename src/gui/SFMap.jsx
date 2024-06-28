@@ -39,7 +39,7 @@ export default function SFMap({ftdata}){
       <span className="typeFood" style={{ color: '#ff00ff'}}>Coffe/Dessert</span>
       <span className="typeFood" style={{ color: '#00ffff'}}>Other</span>
     </div>
-    <div style={{ width: '95vw', height: '85vh' }} ref={mapRef}>
+    <div style={{ width: '99%', height: '85vh' }} ref={mapRef}>
 
     {/*<APIProvider apiKey="AIzaSyCiYftJxB-6IAs1JryhxvSVRwvq2rsgY8g">*/}
 
