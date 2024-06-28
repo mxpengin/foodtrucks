@@ -7,6 +7,10 @@ import {FoodTruckInfo} from './controllers/FoodTruckInfo';
 import SFMap from './gui/SFMap';
 import {APIProvider, Map, useMap} from '@vis.gl/react-google-maps';
 
+/**
+ * Loads information 
+ * Once the list of FT is loaded, the map is displayed
+ */
 
 function App() {
   const [count, setCount] = useState(0)
@@ -28,14 +32,11 @@ function App() {
   },[]);
 
 
-
-
   return (
      <>
-
       {screen==="loading"&&<>
         <div>
-          <img src={animation} className="logo" alt="React logo" />
+          <img src={animation} className="logo"  />
         </div>
         <h2>Loading...</h2>
       </>
@@ -44,18 +45,10 @@ function App() {
         <span>Error</span>
       </div>}
       {screen==="map"&&<div>
-      <APIProvider apiKey="AIzaSyCiYftJxB-6IAs1JryhxvSVRwvq2rsgY8g">
-        <SFMap ftdata={foodTruckData} />
+        <APIProvider apiKey="AIzaSyCiYftJxB-6IAs1JryhxvSVRwvq2rsgY8g">
+          <SFMap ftdata={foodTruckData} />
         </APIProvider>
       </div>}
-      <div>
-
-        
-          
-        
-      </div>
-      
-
     </>
   )
 }

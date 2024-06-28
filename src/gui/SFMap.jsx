@@ -2,8 +2,11 @@ import React, { useEffect, useRef, useState } from 'react';
 //import { Loader } from "@googlemaps/js-api-loader";
 import {APIProvider, Map, useMap, AdvancedMarker, Pin} from '@vis.gl/react-google-maps';
 
+/**
+ * Displays a map of the food trucks
+ */
 
-/* api key AIzaSyCiYftJxB-6IAs1JryhxvSVRwvq2rsgY8g   */
+
 
 export default function SFMap({ftdata}){
   const mapRef = useRef(null);
