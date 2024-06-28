@@ -61,8 +61,8 @@ export default function SFMap(){
     <APIProvider apiKey="AIzaSyCiYftJxB-6IAs1JryhxvSVRwvq2rsgY8g">
 
        <Map
-      defaultZoom={13}
-      defaultCenter={ { lat: -33.860664, lng: 151.208138 } } 
+      defaultZoom={12}
+      defaultCenter={ { lat: 37.75, lng: -122.40 } } 
       style={{ width: '100%', height: '100%' }}
 
      ></Map>
