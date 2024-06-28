@@ -45,7 +45,7 @@ function App() {
       </div>}
       {screen==="map"&&<div>
       <APIProvider apiKey="AIzaSyCiYftJxB-6IAs1JryhxvSVRwvq2rsgY8g">
-        <SFMap  />
+        <SFMap ftdata={foodTruckData} />
         </APIProvider>
       </div>}
       <div>
