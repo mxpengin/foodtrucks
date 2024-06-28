@@ -4,15 +4,21 @@ import viteLogo from '/vite.svg';
 import animation from './assets/foodtruck-small.gif';
 import './App.css';
 import {FoodTruckInfo} from './controllers/FoodTruckInfo';
+import SFMap from './gui/SFMap';
+
+import {APIProvider} from '@vis.gl/react-google-maps';
+
 
 function App() {
   const [count, setCount] = useState(0)
   const [screen, setScreen] = useState("loading");   // possible values ; ["loading","error","map"]
+  const [foodTruckData, setFoodTruckData] = useState([]);
 
   useEffect(() =>{
     async function init(){
       const ftdata = await FoodTruckInfo();
       if( typeof(ftdata) === 'object' ){
+        setFoodTruckData(ftdata);
         setScreen("map");
       }else{
         setScreen("error");
@@ -26,15 +32,20 @@ function App() {
 
 
   return (
-    <>
-      {screen==="loading"&&<div>
-      <img src={animation} className="logo" alt="React logo" />
-      </div>}
+     <APIProvider apiKey={'AIzaSyCiYftJxB-6IAs1JryhxvSVRwvq2rsgY8g'} onLoad={() => console.log('Maps API has loaded.')}>
+
+      {screen==="loading"&&<>
+        <div>
+          <img src={animation} className="logo" alt="React logo" />
+        </div>
+        <h2>Loading...</h2>
+      </>
+      }
       {screen==="error"&&<div>
         <span>Error</span>
       </div>}
       {screen==="map"&&<div>
-        <span>Mapa</span>
+        <SFMap  />
       </div>}
       <div>
 
@@ -42,7 +53,7 @@ function App() {
           
         
       </div>
-      <h2>Loading...</h2>
+      
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -54,7 +65,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-    </>
+    </APIProvider>
   )
 }
 

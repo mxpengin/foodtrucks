@@ -10,8 +10,8 @@ export async function FoodTruckInfo(){
 
     const ftdata = await httpRequest("https://data.sfgov.org/resource/rqzj-sfat.json");
     ftdata.forEach(ft => {
-        console.log("applicant:"+ft.applicant );
-        console.log(ft);
+        //console.log("applicant:"+ft.applicant );
+        //console.log(ft);
     });
     return ftdata;
 }
