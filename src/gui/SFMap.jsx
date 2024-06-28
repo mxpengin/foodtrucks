@@ -30,7 +30,16 @@ export default function SFMap({ftdata}){
     };
 
   return(
-    <div style={{ width: '95vw', height: '100vh' }} ref={mapRef}>
+    <div>
+      <h3>FoodTrucks</h3>
+    <div>
+      <span className="typeFood" style={{ color: '#00ff00'}}>Mexican</span>
+      <span className="typeFood" style={{ color: '#ff0000'}}>American</span>
+      <span className="typeFood" style={{ color: '#0000ff'}}>Italian</span>
+      <span className="typeFood" style={{ color: '#ff00ff'}}>Coffe/Dessert</span>
+      <span className="typeFood" style={{ color: '#00ffff'}}>Other</span>
+    </div>
+    <div style={{ width: '95vw', height: '85vh' }} ref={mapRef}>
 
     {/*<APIProvider apiKey="AIzaSyCiYftJxB-6IAs1JryhxvSVRwvq2rsgY8g">*/}
 
@@ -48,7 +57,7 @@ export default function SFMap({ftdata}){
      </Map>
       {/*</APIProvider>*/}
       </div>
-
+      </div>
       
   );
 }
